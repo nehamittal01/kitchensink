@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="300">
+
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="AppFile"
+                     fileName="/Users/b0223467/Desktop/kitchensink/logs/kitchensink-app.log"
+                     filePattern="/Users/b0223467/Desktop/kitchensink/logs/archive/kitchensink-app-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%highlight{%d [%t] %p %c - %m%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=cyan,
+                    DEBUG=green bold, TRACE=black}
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                                           modulate="true"/>
+                <SizeBasedTriggeringPolicy size="500 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100"/>
+        </RollingFile>
+
+        <RollingFile name="ConsoleLogs"
+                     fileName="/Users/b0223467/Desktop/kitchensink/logs/kitchensink-console.log"
+                     filePattern="/Users/b0223467/Desktop/kitchensink/logs/archive/kitchensink-console-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <pattern>"%highlight{%d [%t] %p %c - %m%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=cyan,
+                    DEBUG=green bold, TRACE=MAGENTA}
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                                           modulate="true"/>
+                <SizeBasedTriggeringPolicy size="500 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100"/>
+        </RollingFile>
+        <Async name="AsyncFileAppender">
+            <AppenderRef ref="AppFile"/>
+        </Async>
+
+        <Async name="AsyncConsoleAppender">
+            <AppenderRef ref="ConsoleLogs"/>
+        </Async>
+    </Appenders>
+
+
+    <Loggers>
+
+        <Root level="INFO">
+            <AppenderRef ref="AsyncFileAppender" level="INFO"/>
+        </Root>
+
+        <Logger name="org.jboss.eap.quickstarts" level="ERROR">
+            <AppenderRef ref="AsyncConsoleAppender"/>
+        </Logger>
+
+
+    </Loggers>
+</Configuration>
