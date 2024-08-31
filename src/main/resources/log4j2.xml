@@ -49,11 +49,11 @@
     <Loggers>
 
         <Root level="INFO">
-            <AppenderRef ref="AsyncFileAppender" level="INFO"/>
+            <AppenderRef ref="CONSOLE" level="INFO"/>
         </Root>
 
         <Logger name="org.jboss.eap.quickstarts" level="ERROR">
-            <AppenderRef ref="AsyncConsoleAppender"/>
+            <AppenderRef ref="CONSOLE"/>
         </Logger>
 
 
