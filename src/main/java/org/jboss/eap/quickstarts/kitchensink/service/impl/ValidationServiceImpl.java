@@ -29,12 +29,11 @@ public class ValidationServiceImpl implements IValidationService {
     @Override
     public boolean emailAlreadyExists(String email) {
         try{
-            Member member=memberRepository.findByEmail(email);
+            return memberRepository.findByEmail(email)!=null;
         }catch (NoResultException exception){
             log.info("Exception occurred inside emailAlreadyExists",exception);
         }
-
-        return member != null;
+        return false;
     }
 
     @Override

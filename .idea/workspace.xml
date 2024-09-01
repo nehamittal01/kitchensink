@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d647deb-9820-4ca4-9d7f-c881fbaf8c63" name="Changes" comment="Logging framework">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-qa.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/controller/MemberControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/repository/MemberRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/service/MemberRegistrationServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application-qa.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/data.sql" afterDir="false" />
+    <list default="true" id="6d647deb-9820-4ca4-9d7f-c881fbaf8c63" name="Changes" comment="Junit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/controler/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/controler/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/model/request/CreateMemberRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/model/request/CreateMemberRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/IMemberRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/IMemberRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/MemberRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/MemberRegistration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/ValidationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/ValidationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/KitchensinkApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +285,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725095431081</updated>
       <workItem from="1725116352639" duration="508000" />
-      <workItem from="1725116878316" duration="30810000" />
+      <workItem from="1725116878316" duration="30892000" />
     </task>
     <task id="LOCAL-00001" summary="Spring project">
       <created>1725095600719</created>
@@ -329,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725121177192</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Junit">
+      <option name="closed" value="true" />
+      <created>1725207423505</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725207423505</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +347,8 @@
     <MESSAGE value="Logging framework" />
     <MESSAGE value="Mongo Connection pooling" />
     <MESSAGE value="Integrate with Eureka Client Discovery" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate with Eureka Client Discovery" />
+    <MESSAGE value="Junit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Junit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
