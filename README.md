@@ -16,6 +16,7 @@ This projects aims to converts legacy jboss application to Spring boot 3.3 proje
 * Logging Framework 
 * Lombok
 * Eureka Client Discovery
+* Async Logger and Rollover logging file handling
 
 
 ### Prerequisites
