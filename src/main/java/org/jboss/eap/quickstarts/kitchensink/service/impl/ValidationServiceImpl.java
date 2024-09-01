@@ -1,11 +1,11 @@
 package org.jboss.eap.quickstarts.kitchensink.service.impl;
 
-import jakarta.persistence.NoResultException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.ValidationException;
 import jakarta.validation.Validator;
 import lombok.extern.slf4j.Slf4j;
+import org.jboss.eap.quickstarts.kitchensink.exceptions.EntityNotFoundException;
 import org.jboss.eap.quickstarts.kitchensink.model.request.CreateMemberRequest;
 import org.jboss.eap.quickstarts.kitchensink.repository.IMemberRepository;
 import org.jboss.eap.quickstarts.kitchensink.service.IValidationService;
@@ -29,7 +29,7 @@ public class ValidationServiceImpl implements IValidationService {
     public boolean emailAlreadyExists(String email) {
         try{
             return memberRepository.findByEmail(email)!=null;
-        }catch (NoResultException exception){
+        }catch (EntityNotFoundException exception){
             log.info("Exception occurred inside emailAlreadyExists",exception);
         }
         return false;

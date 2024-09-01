@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d647deb-9820-4ca4-9d7f-c881fbaf8c63" name="Changes" comment="Junit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/exceptions/EntityNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/MemberRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/MemberRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/ValidationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/ValidationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,10 +114,13 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MemberRepositoryTest.testFindByEmail_positiveResponse">
+  <component name="RunManager" selected="Application.kitchensink">
     <configuration name="kitchensink" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="21 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="-Dlog_path" value="$PROJECT_DIR$" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="org.jboss.eap.quickstarts.kitchensink.KitchensinkApplication" />
       <module name="kitchensink" />
       <option name="PROGRAM_PARAMETERS" value="-Dlog_path=$PROJECT_DIR$" />
@@ -284,7 +294,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725095431081</updated>
       <workItem from="1725116352639" duration="508000" />
-      <workItem from="1725116878316" duration="30907000" />
+      <workItem from="1725116878316" duration="35008000" />
     </task>
     <task id="LOCAL-00001" summary="Spring project">
       <created>1725095600719</created>
@@ -332,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725207478197</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Junit">
+      <option name="closed" value="true" />
+      <created>1725207494980</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725207494980</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

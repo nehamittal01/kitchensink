@@ -6,8 +6,8 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"/>
         </Console>
         <RollingFile name="AppFile"
-                     fileName="/Users/b0223467/Desktop/kitchensink/logs/kitchensink-app.log"
-                     filePattern="/Users/b0223467/Desktop/kitchensink/logs/archive/kitchensink-app-%d{yyyy-MM-dd}-%i.log.gz">
+                     fileName="${sys:log_path}/logs/kitchensink-app.log"
+                     filePattern="${sys:log_path}/logs/archive/kitchensink-app-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout>
                 <pattern>%highlight{%d [%t] %p %c - %m%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=cyan,
                     DEBUG=green bold, TRACE=black}
@@ -22,8 +22,8 @@
         </RollingFile>
 
         <RollingFile name="ConsoleLogs"
-                     fileName="/Users/b0223467/Desktop/kitchensink/logs/kitchensink-console.log"
-                     filePattern="/Users/b0223467/Desktop/kitchensink/logs/archive/kitchensink-console-%d{yyyy-MM-dd}-%i.log.gz">
+                     fileName="${sys:log_path}/logs/kitchensink-console.log"
+                     filePattern="${sys:log_path}/logs/archive/kitchensink-console-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout>
                 <pattern>"%highlight{%d [%t] %p %c - %m%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=cyan,
                     DEBUG=green bold, TRACE=MAGENTA}
@@ -49,11 +49,11 @@
     <Loggers>
 
         <Root level="INFO">
-            <AppenderRef ref="CONSOLE" level="INFO"/>
+            <AppenderRef ref="AppFile" level="INFO"/>
         </Root>
 
         <Logger name="org.jboss.eap.quickstarts" level="ERROR">
-            <AppenderRef ref="CONSOLE"/>
+            <AppenderRef ref="ConsoleLogs"/>
         </Logger>
 
 

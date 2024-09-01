@@ -24,23 +24,28 @@ import java.util.stream.Collectors;
 @Slf4j
 public class MemberRegistration implements IMemberRegistration {
 
-    @Autowired
-    IMemberRepository memberRepository;
+    private final IMemberRepository memberRepository;
+
+    private final ConversionService conversionService;
+
+    private final IMemberEventPublisher eventPublisher;
+
+    private final List<Member> membersList;
 
     @Autowired
-    @Qualifier("kitchenSinkConversionService")
-    private ConversionService conversionService;
-
-    @Autowired
-    private IMemberEventPublisher eventPublisher;
-
-    @Autowired
-    @Qualifier("memberData")
-    private List<Member> membersList;
+    public MemberRegistration(IMemberRepository memberRepository,
+                              @Qualifier("kitchenSinkConversionService") ConversionService conversionService,
+                              IMemberEventPublisher eventPublisher,
+                              @Qualifier("memberData") List<Member> membersList) {
+        this.memberRepository = memberRepository;
+        this.conversionService = conversionService;
+        this.eventPublisher = eventPublisher;
+        this.membersList = membersList;
+    }
 
     @Override
     public void register(CreateMemberRequest createMemberRequest){
-        log.info("Registering " + createMemberRequest.getName());
+        log.info("Registering {}", createMemberRequest.getName());
         Member member = conversionService.convert(createMemberRequest, Member.class);
         memberRepository.save(member);
         eventPublisher.publish(new AddMemberEvent(this, member));
