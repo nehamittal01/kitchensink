@@ -6,7 +6,6 @@ import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.ValidationException;
 import jakarta.validation.Validator;
 import lombok.extern.slf4j.Slf4j;
-import org.jboss.eap.quickstarts.kitchensink.model.Member;
 import org.jboss.eap.quickstarts.kitchensink.model.request.CreateMemberRequest;
 import org.jboss.eap.quickstarts.kitchensink.repository.IMemberRepository;
 import org.jboss.eap.quickstarts.kitchensink.service.IValidationService;
