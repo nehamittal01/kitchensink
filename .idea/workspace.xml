@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d647deb-9820-4ca4-9d7f-c881fbaf8c63" name="Changes" comment="Mongo Connection pooling">
+    <list default="true" id="6d647deb-9820-4ca4-9d7f-c881fbaf8c63" name="Changes" comment="Logging framework">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-qa.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/controller/MemberControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/repository/MemberRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/service/MemberRegistrationServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application-qa.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/KitchensinkApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/KitchensinkApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/controler/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/controler/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/model/request/CreateMemberRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/model/request/CreateMemberRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/IMemberRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/IMemberRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/MemberRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/MemberRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/ValidationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jboss/eap/quickstarts/kitchensink/service/impl/ValidationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/KitchensinkApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,34 +62,56 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Application.kitchensink.executor&quot;: &quot;Debug&quot;,
-    &quot;Maven.kitchensink [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.kitchensink [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.KitchensinkApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/b0223467/Desktop/kitchensink&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Application.kitchensink.executor": "Run",
+    "JUnit.All in kitchensink.executor": "Coverage",
+    "JUnit.KitchensinkApplicationTests.contextLoads.executor": "Run",
+    "JUnit.KitchensinkApplicationTests.executor": "Run",
+    "JUnit.MemberControllerTest.createMember_EmailAlreadyExists_400Response.executor": "Run",
+    "JUnit.MemberControllerTest.createMember_InvalidMemberName_400Response.executor": "Run",
+    "JUnit.MemberControllerTest.createMember_InvalidMemberPhoneNumber_400Response.executor": "Run",
+    "JUnit.MemberControllerTest.createMember_positiveResponse.executor": "Run",
+    "JUnit.MemberControllerTest.executor": "Run",
+    "JUnit.MemberControllerTest.listAllMembers.executor": "Run",
+    "JUnit.MemberControllerTest.listAllMembers_positiveResponse.executor": "Run",
+    "JUnit.MemberControllerTest.lookupMemberById_404Response.executor": "Run",
+    "JUnit.MemberControllerTest.lookupMemberById_positiveResponse.executor": "Run",
+    "JUnit.MemberRepositoryTest.executor": "Run",
+    "JUnit.MemberRepositoryTest.testFindAllByOrderByNameAsc_nullResponse.executor": "Run",
+    "JUnit.MemberRepositoryTest.testFindAllByOrderByNameAsc_positiveResponse.executor": "Run",
+    "JUnit.MemberRepositoryTest.testFindByEmail_nullResponse.executor": "Run",
+    "JUnit.MemberRepositoryTest.testFindByEmail_positiveResponse.executor": "Run",
+    "Maven.kitchensink [clean,install].executor": "Run",
+    "Maven.kitchensink [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.KitchensinkApplication.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/b0223467/Desktop/kitchensink",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -88,13 +120,93 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.kitchensink">
+  <component name="RunManager" selected="JUnit.MemberRepositoryTest.testFindByEmail_positiveResponse">
     <configuration name="kitchensink" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="21 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.jboss.eap.quickstarts.kitchensink.KitchensinkApplication" />
       <module name="kitchensink" />
       <option name="PROGRAM_PARAMETERS" value="-Dlog_path=$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberControllerTest.createMember_EmailAlreadyExists_400Response" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kitchensink" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jboss.eap.quickstarts.kitchensink.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jboss.eap.quickstarts.kitchensink.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.jboss.eap.quickstarts.kitchensink.controller.MemberControllerTest" />
+      <option name="METHOD_NAME" value="createMember_EmailAlreadyExists_400Response" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberRepositoryTest.testFindAllByOrderByNameAsc_nullResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kitchensink" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jboss.eap.quickstarts.kitchensink.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository.MemberRepositoryTest" />
+      <option name="METHOD_NAME" value="testFindAllByOrderByNameAsc_nullResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberRepositoryTest.testFindAllByOrderByNameAsc_positiveResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kitchensink" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jboss.eap.quickstarts.kitchensink.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository.MemberRepositoryTest" />
+      <option name="METHOD_NAME" value="testFindAllByOrderByNameAsc_positiveResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberRepositoryTest.testFindByEmail_nullResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kitchensink" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jboss.eap.quickstarts.kitchensink.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository.MemberRepositoryTest" />
+      <option name="METHOD_NAME" value="testFindByEmail_nullResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberRepositoryTest.testFindByEmail_positiveResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kitchensink" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jboss.eap.quickstarts.kitchensink.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.jboss.eap.quickstarts.kitchensink.repository.MemberRepositoryTest" />
+      <option name="METHOD_NAME" value="testFindByEmail_positiveResponse" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,9 +262,23 @@
     </configuration>
     <list>
       <item itemvalue="Application.kitchensink" />
+      <item itemvalue="JUnit.MemberControllerTest.createMember_EmailAlreadyExists_400Response" />
+      <item itemvalue="JUnit.MemberRepositoryTest.testFindAllByOrderByNameAsc_nullResponse" />
+      <item itemvalue="JUnit.MemberRepositoryTest.testFindAllByOrderByNameAsc_positiveResponse" />
+      <item itemvalue="JUnit.MemberRepositoryTest.testFindByEmail_nullResponse" />
+      <item itemvalue="JUnit.MemberRepositoryTest.testFindByEmail_positiveResponse" />
       <item itemvalue="Maven.kitchensink [clean,install]" />
       <item itemvalue="Spring Boot.KitchensinkApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MemberRepositoryTest.testFindByEmail_positiveResponse" />
+        <item itemvalue="JUnit.MemberRepositoryTest.testFindAllByOrderByNameAsc_nullResponse" />
+        <item itemvalue="JUnit.MemberRepositoryTest.testFindAllByOrderByNameAsc_positiveResponse" />
+        <item itemvalue="JUnit.MemberRepositoryTest.testFindByEmail_nullResponse" />
+        <item itemvalue="JUnit.MemberControllerTest.createMember_EmailAlreadyExists_400Response" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -171,7 +297,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725095431081</updated>
       <workItem from="1725116352639" duration="508000" />
-      <workItem from="1725116878316" duration="3939000" />
+      <workItem from="1725116878316" duration="30810000" />
     </task>
     <task id="LOCAL-00001" summary="Spring project">
       <created>1725095600719</created>
@@ -195,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725118701781</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Integrate with Eureka Client Discovery">
+      <option name="closed" value="true" />
+      <created>1725121177192</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725121177192</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +350,26 @@
     <MESSAGE value="Spring project" />
     <MESSAGE value="Logging framework" />
     <MESSAGE value="Mongo Connection pooling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mongo Connection pooling" />
+    <MESSAGE value="Integrate with Eureka Client Discovery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate with Eureka Client Discovery" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/controller/MemberControllerTest.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/jboss/eap/quickstarts/kitchensink/controller/MemberControllerTest.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/kitchensink$All_in_kitchensink.ic" NAME="All in kitchensink Coverage Results" MODIFIED="1725189061230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

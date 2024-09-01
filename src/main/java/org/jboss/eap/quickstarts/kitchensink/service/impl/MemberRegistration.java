@@ -1,5 +1,6 @@
 package org.jboss.eap.quickstarts.kitchensink.service.impl;
 
+import jakarta.ws.rs.WebApplicationException;
 import lombok.extern.slf4j.Slf4j;
 import org.jboss.eap.quickstarts.kitchensink.data.eventProducer.IMemberEventPublisher;
 import org.jboss.eap.quickstarts.kitchensink.model.Member;
@@ -11,6 +12,7 @@ import org.jboss.eap.quickstarts.kitchensink.service.IMemberRegistration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.convert.ConversionService;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -37,7 +39,7 @@ public class MemberRegistration implements IMemberRegistration {
     private List<Member> membersList;
 
     @Override
-    public void register(CreateMemberRequest createMemberRequest) throws Exception {
+    public void register(CreateMemberRequest createMemberRequest){
         log.info("Registering " + createMemberRequest.getName());
         Member member = conversionService.convert(createMemberRequest, Member.class);
         memberRepository.save(member);
@@ -53,6 +55,8 @@ public class MemberRegistration implements IMemberRegistration {
                     .filter(m -> id.equals(m.getId()))
                     .findAny()
                     .orElse(null);
+        }else{
+            throw new WebApplicationException(HttpStatus.NOT_FOUND.name());
         }
         return conversionService.convert(member, GetMemberResponse.class);
     }

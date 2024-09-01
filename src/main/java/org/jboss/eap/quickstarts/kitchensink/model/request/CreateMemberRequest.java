@@ -2,7 +2,10 @@ package org.jboss.eap.quickstarts.kitchensink.model.request;
 
 import com.google.gson.Gson;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
+import lombok.Data;
 
+@Builder
 public class CreateMemberRequest {
 
     @NotNull(message = "name can not be null")

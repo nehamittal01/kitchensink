@@ -7,7 +7,7 @@ import org.jboss.eap.quickstarts.kitchensink.model.response.GetMemberResponse;
 import java.util.List;
 
 public interface IMemberRegistration {
-    void register(CreateMemberRequest createMemberRequest) throws Exception;
+    void register(CreateMemberRequest createMemberRequest);
 
     GetMemberResponse findMemberById(String id);
 

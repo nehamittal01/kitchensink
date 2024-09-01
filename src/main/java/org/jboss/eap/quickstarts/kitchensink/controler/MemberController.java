@@ -42,7 +42,7 @@ public class MemberController {
 
 
     @GetMapping(value = "/members/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GetMemberResponse> lookupMemberById(@PathVariable(name = Constants.ID) String id) {
+    public ResponseEntity<GetMemberResponse> lookupMemberById(@PathVariable String id) {
         log.info("Starting lookupMemberById execution for id :{}", id);
         GetMemberResponse getMemberResponse = registration.findMemberById(id);
         if (null == getMemberResponse) {
